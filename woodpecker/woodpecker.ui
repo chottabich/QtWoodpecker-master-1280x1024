@@ -71,7 +71,7 @@
          <string>~/linuxcnc/configs/woodpecker/woodpecker.pref</string>
         </property>
         <property name="focusEffect_option" stdset="0">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="focusBlur_option" stdset="0">
          <bool>false</bool>
@@ -2405,16 +2405,16 @@ View</string>
                                <widget class="GCodeGraphics" name="gcodegraphics">
                                 <property name="background_color" stdset="0">
                                  <color alpha="250">
-                                  <red>100</red>
-                                  <green>100</green>
-                                  <blue>100</blue>
+                                  <red>0</red>
+                                  <green>0</green>
+                                  <blue>0</blue>
                                  </color>
                                 </property>
                                 <property name="_use_gradient_background" stdset="0">
                                  <bool>true</bool>
                                 </property>
                                 <property name="overlay" stdset="0">
-                                 <bool>true</bool>
+                                 <bool>false</bool>
                                 </property>
                                </widget>
                               </item>
@@ -5104,6 +5104,22 @@ TO FILE</string>
                                       </property>
                                      </widget>
                                     </item>
+                                    <item>
+                                     <spacer name="horizontalSpacer_7">
+                                      <property name="orientation">
+                                       <enum>Qt::Horizontal</enum>
+                                      </property>
+                                      <property name="sizeType">
+                                       <enum>QSizePolicy::Fixed</enum>
+                                      </property>
+                                      <property name="sizeHint" stdset="0">
+                                       <size>
+                                        <width>20</width>
+                                        <height>20</height>
+                                       </size>
+                                      </property>
+                                     </spacer>
+                                    </item>
                                    </layout>
                                   </widget>
                                  </item>
@@ -5199,6 +5215,22 @@ TO FILE</string>
                                        <set>Qt::AlignCenter</set>
                                       </property>
                                      </widget>
+                                    </item>
+                                    <item>
+                                     <spacer name="horizontalSpacer_18">
+                                      <property name="orientation">
+                                       <enum>Qt::Horizontal</enum>
+                                      </property>
+                                      <property name="sizeType">
+                                       <enum>QSizePolicy::Fixed</enum>
+                                      </property>
+                                      <property name="sizeHint" stdset="0">
+                                       <size>
+                                        <width>20</width>
+                                        <height>20</height>
+                                       </size>
+                                      </property>
+                                     </spacer>
                                     </item>
                                    </layout>
                                   </widget>
@@ -6056,7 +6088,11 @@ HERE</string>
                                          </widget>
                                         </item>
                                         <item row="2" column="0">
-                                         <widget class="QLineEdit" name="runFromLineEdit"/>
+                                         <widget class="QLineEdit" name="runFromLineEdit">
+                                          <property name="maxLength">
+                                           <number>8</number>
+                                          </property>
+                                         </widget>
                                         </item>
                                         <item row="3" column="0">
                                          <widget class="PushButton" name="btn_rezet">
@@ -6504,7 +6540,7 @@ KEYBOARD</string>
                                 <property name="sizeHint" stdset="0">
                                  <size>
                                   <width>20</width>
-                                  <height>2</height>
+                                  <height>40</height>
                                  </size>
                                 </property>
                                </spacer>
@@ -6528,27 +6564,221 @@ KEYBOARD</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QWidget" name="widget_jog_buttons" native="true">
-                                   <layout class="QGridLayout" name="gridLayout_jog_2" rowstretch="0,0,0,0,0,0,0,0">
-                                    <property name="leftMargin">
-                                     <number>9</number>
-                                    </property>
-                                    <property name="topMargin">
-                                     <number>0</number>
-                                    </property>
-                                    <property name="rightMargin">
-                                     <number>9</number>
-                                    </property>
-                                    <property name="bottomMargin">
-                                     <number>2</number>
-                                    </property>
-                                    <property name="horizontalSpacing">
-                                     <number>0</number>
-                                    </property>
-                                    <property name="verticalSpacing">
-                                     <number>4</number>
-                                    </property>
-                                    <item row="6" column="1">
+                                  <spacer name="horizontalSpacer_17">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeType">
+                                    <enum>QSizePolicy::Fixed</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>30</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <widget class="QGroupBox" name="groupBox_4">
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>250</width>
+                                     <height>16777215</height>
+                                    </size>
+                                   </property>
+                                   <property name="title">
+                                    <string>JOG</string>
+                                   </property>
+                                   <property name="alignment">
+                                    <set>Qt::AlignCenter</set>
+                                   </property>
+                                   <layout class="QGridLayout" name="gridLayout_20">
+                                    <item row="0" column="0">
+                                     <widget class="ActionButton" name="a_minus_jogbutton">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="icon">
+                                       <iconset>
+                                        <normaloff>images/a_minus_jog_button.png</normaloff>images/a_minus_jog_button.png</iconset>
+                                      </property>
+                                      <property name="iconSize">
+                                       <size>
+                                        <width>44</width>
+                                        <height>44</height>
+                                       </size>
+                                      </property>
+                                      <property name="jog_joint_pos_action" stdset="0">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="jog_joint_neg_action" stdset="0">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="joint_number" stdset="0">
+                                       <number>3</number>
+                                      </property>
+                                      <property name="axis_letter" stdset="0">
+                                       <string>A</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="2">
+                                     <widget class="ActionButton" name="a_plus_jogbutton">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="icon">
+                                       <iconset>
+                                        <normaloff>images/a_plus_jog_button.png</normaloff>images/a_plus_jog_button.png</iconset>
+                                      </property>
+                                      <property name="iconSize">
+                                       <size>
+                                        <width>44</width>
+                                        <height>44</height>
+                                       </size>
+                                      </property>
+                                      <property name="jog_joint_pos_action" stdset="0">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="joint_number" stdset="0">
+                                       <number>3</number>
+                                      </property>
+                                      <property name="axis_letter" stdset="0">
+                                       <string>A</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="1">
+                                     <widget class="ActionButton" name="y_plus_jogbutton">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>50</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="icon">
+                                       <iconset>
+                                        <normaloff>images/y_plus_jog_button.png</normaloff>images/y_plus_jog_button.png</iconset>
+                                      </property>
+                                      <property name="iconSize">
+                                       <size>
+                                        <width>44</width>
+                                        <height>44</height>
+                                       </size>
+                                      </property>
+                                      <property name="jog_joint_pos_action" stdset="0">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="template_label_option" stdset="0">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="joint_number" stdset="0">
+                                       <number>1</number>
+                                      </property>
+                                      <property name="axis_letter" stdset="0">
+                                       <string>Y</string>
+                                      </property>
+                                      <property name="incr_imperial_number" stdset="0">
+                                       <double>0.010000000000000</double>
+                                      </property>
+                                      <property name="incr_mm_number" stdset="0">
+                                       <double>0.025000000000000</double>
+                                      </property>
+                                      <property name="incr_angular_number" stdset="0">
+                                       <double>-1.000000000000000</double>
+                                      </property>
+                                      <property name="toggle_float_option" stdset="0">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="float_num" stdset="0">
+                                       <double>100.000000000000000</double>
+                                      </property>
+                                      <property name="float_alt_num" stdset="0">
+                                       <double>50.000000000000000</double>
+                                      </property>
+                                      <property name="view_type_string" stdset="0">
+                                       <string>P</string>
+                                      </property>
+                                      <property name="command_text_string" stdset="0">
+                                       <string/>
+                                      </property>
+                                      <property name="ini_mdi_number" stdset="0">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="textTemplate" stdset="0">
+                                       <string>%1.3f in</string>
+                                      </property>
+                                      <property name="alt_textTemplate" stdset="0">
+                                       <string>%1.2f mm</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="3" column="1">
+                                     <widget class="PushButton" name="pushbutton_metric">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="checkable">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="checked">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="checked_state_text_option" stdset="0">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="true_state_string" stdset="0">
+                                       <string>G21</string>
+                                      </property>
+                                      <property name="false_state_string" stdset="0">
+                                       <string>G20</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="3" column="0">
                                      <widget class="ActionButton" name="x_minus_jogbutton">
                                       <property name="sizePolicy">
                                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -6628,230 +6858,7 @@ KEYBOARD</string>
                                       </property>
                                      </widget>
                                     </item>
-                                    <item row="5" column="2">
-                                     <widget class="ActionButton" name="y_plus_jogbutton">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="maximumSize">
-                                       <size>
-                                        <width>50</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                      <property name="icon">
-                                       <iconset>
-                                        <normaloff>images/y_plus_jog_button.png</normaloff>images/y_plus_jog_button.png</iconset>
-                                      </property>
-                                      <property name="iconSize">
-                                       <size>
-                                        <width>44</width>
-                                        <height>44</height>
-                                       </size>
-                                      </property>
-                                      <property name="jog_joint_pos_action" stdset="0">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="template_label_option" stdset="0">
-                                       <bool>false</bool>
-                                      </property>
-                                      <property name="joint_number" stdset="0">
-                                       <number>1</number>
-                                      </property>
-                                      <property name="axis_letter" stdset="0">
-                                       <string>Y</string>
-                                      </property>
-                                      <property name="incr_imperial_number" stdset="0">
-                                       <double>0.010000000000000</double>
-                                      </property>
-                                      <property name="incr_mm_number" stdset="0">
-                                       <double>0.025000000000000</double>
-                                      </property>
-                                      <property name="incr_angular_number" stdset="0">
-                                       <double>-1.000000000000000</double>
-                                      </property>
-                                      <property name="toggle_float_option" stdset="0">
-                                       <bool>false</bool>
-                                      </property>
-                                      <property name="float_num" stdset="0">
-                                       <double>100.000000000000000</double>
-                                      </property>
-                                      <property name="float_alt_num" stdset="0">
-                                       <double>50.000000000000000</double>
-                                      </property>
-                                      <property name="view_type_string" stdset="0">
-                                       <string>P</string>
-                                      </property>
-                                      <property name="command_text_string" stdset="0">
-                                       <string/>
-                                      </property>
-                                      <property name="ini_mdi_number" stdset="0">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="textTemplate" stdset="0">
-                                       <string>%1.3f in</string>
-                                      </property>
-                                      <property name="alt_textTemplate" stdset="0">
-                                       <string>%1.2f mm</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="3" column="1">
-                                     <widget class="ActionButton" name="z_minus_jogbutton">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="maximumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                      <property name="icon">
-                                       <iconset>
-                                        <normaloff>images/z_minus_jog_button.png</normaloff>images/z_minus_jog_button.png</iconset>
-                                      </property>
-                                      <property name="iconSize">
-                                       <size>
-                                        <width>44</width>
-                                        <height>44</height>
-                                       </size>
-                                      </property>
-                                      <property name="jog_joint_neg_action" stdset="0">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="joint_number" stdset="0">
-                                       <number>2</number>
-                                      </property>
-                                      <property name="axis_letter" stdset="0">
-                                       <string>Z</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="6" column="3">
-                                     <widget class="ActionButton" name="x_plus_jogbutton">
-                                      <property name="sizePolicy">
-                                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                       </sizepolicy>
-                                      </property>
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="maximumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                      <property name="icon">
-                                       <iconset>
-                                        <normaloff>images/x_plus_jog_button.png</normaloff>images/x_plus_jog_button.png</iconset>
-                                      </property>
-                                      <property name="iconSize">
-                                       <size>
-                                        <width>44</width>
-                                        <height>44</height>
-                                       </size>
-                                      </property>
-                                      <property name="jog_joint_pos_action" stdset="0">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="template_label_option" stdset="0">
-                                       <bool>false</bool>
-                                      </property>
-                                      <property name="joint_number" stdset="0">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="axis_letter" stdset="0">
-                                       <string>X</string>
-                                      </property>
-                                      <property name="incr_imperial_number" stdset="0">
-                                       <double>0.010000000000000</double>
-                                      </property>
-                                      <property name="incr_mm_number" stdset="0">
-                                       <double>0.025000000000000</double>
-                                      </property>
-                                      <property name="incr_angular_number" stdset="0">
-                                       <double>-1.000000000000000</double>
-                                      </property>
-                                      <property name="toggle_float_option" stdset="0">
-                                       <bool>false</bool>
-                                      </property>
-                                      <property name="float_num" stdset="0">
-                                       <double>100.000000000000000</double>
-                                      </property>
-                                      <property name="float_alt_num" stdset="0">
-                                       <double>50.000000000000000</double>
-                                      </property>
-                                      <property name="view_type_string" stdset="0">
-                                       <string>P</string>
-                                      </property>
-                                      <property name="command_text_string" stdset="0">
-                                       <string/>
-                                      </property>
-                                      <property name="ini_mdi_number" stdset="0">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="textTemplate" stdset="0">
-                                       <string>%1.3f in</string>
-                                      </property>
-                                      <property name="alt_textTemplate" stdset="0">
-                                       <string>%1.2f mm</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="6" column="2">
-                                     <widget class="PushButton" name="pushbutton_metric">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="maximumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="checkable">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="checked">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="checked_state_text_option" stdset="0">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="true_state_string" stdset="0">
-                                       <string>G21</string>
-                                      </property>
-                                      <property name="false_state_string" stdset="0">
-                                       <string>G20</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="7" column="2">
+                                    <item row="4" column="1">
                                      <widget class="ActionButton" name="y_minus_jogbutton">
                                       <property name="sizePolicy">
                                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -6931,23 +6938,103 @@ KEYBOARD</string>
                                       </property>
                                      </widget>
                                     </item>
-                                    <item row="6" column="0">
-                                     <spacer name="horizontalSpacer_7">
+                                    <item row="3" column="2">
+                                     <widget class="ActionButton" name="x_plus_jogbutton">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>52</width>
+                                        <height>52</height>
+                                       </size>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="icon">
+                                       <iconset>
+                                        <normaloff>images/x_plus_jog_button.png</normaloff>images/x_plus_jog_button.png</iconset>
+                                      </property>
+                                      <property name="iconSize">
+                                       <size>
+                                        <width>44</width>
+                                        <height>44</height>
+                                       </size>
+                                      </property>
+                                      <property name="jog_joint_pos_action" stdset="0">
+                                       <bool>true</bool>
+                                      </property>
+                                      <property name="template_label_option" stdset="0">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="joint_number" stdset="0">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="axis_letter" stdset="0">
+                                       <string>X</string>
+                                      </property>
+                                      <property name="incr_imperial_number" stdset="0">
+                                       <double>0.010000000000000</double>
+                                      </property>
+                                      <property name="incr_mm_number" stdset="0">
+                                       <double>0.025000000000000</double>
+                                      </property>
+                                      <property name="incr_angular_number" stdset="0">
+                                       <double>-1.000000000000000</double>
+                                      </property>
+                                      <property name="toggle_float_option" stdset="0">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="float_num" stdset="0">
+                                       <double>100.000000000000000</double>
+                                      </property>
+                                      <property name="float_alt_num" stdset="0">
+                                       <double>50.000000000000000</double>
+                                      </property>
+                                      <property name="view_type_string" stdset="0">
+                                       <string>P</string>
+                                      </property>
+                                      <property name="command_text_string" stdset="0">
+                                       <string/>
+                                      </property>
+                                      <property name="ini_mdi_number" stdset="0">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="textTemplate" stdset="0">
+                                       <string>%1.3f in</string>
+                                      </property>
+                                      <property name="alt_textTemplate" stdset="0">
+                                       <string>%1.2f mm</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="1">
+                                     <spacer name="verticalSpacer_13">
                                       <property name="orientation">
-                                       <enum>Qt::Horizontal</enum>
+                                       <enum>Qt::Vertical</enum>
                                       </property>
                                       <property name="sizeType">
-                                       <enum>QSizePolicy::Fixed</enum>
+                                       <enum>QSizePolicy::Preferred</enum>
                                       </property>
                                       <property name="sizeHint" stdset="0">
                                        <size>
-                                        <width>50</width>
-                                        <height>20</height>
+                                        <width>20</width>
+                                        <height>40</height>
                                        </size>
                                       </property>
                                      </spacer>
                                     </item>
-                                    <item row="3" column="3">
+                                    <item row="1" column="2">
                                      <widget class="ActionButton" name="z_plus_jogbutton">
                                       <property name="sizePolicy">
                                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -6991,8 +7078,8 @@ KEYBOARD</string>
                                       </property>
                                      </widget>
                                     </item>
-                                    <item row="2" column="3">
-                                     <widget class="ActionButton" name="a_plus_jogbutton">
+                                    <item row="1" column="0">
+                                     <widget class="ActionButton" name="z_minus_jogbutton">
                                       <property name="minimumSize">
                                        <size>
                                         <width>52</width>
@@ -7010,63 +7097,22 @@ KEYBOARD</string>
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>images/a_plus_jog_button.png</normaloff>images/a_plus_jog_button.png</iconset>
+                                        <normaloff>images/z_minus_jog_button.png</normaloff>images/z_minus_jog_button.png</iconset>
                                       </property>
                                       <property name="iconSize">
                                        <size>
                                         <width>44</width>
                                         <height>44</height>
                                        </size>
-                                      </property>
-                                      <property name="jog_joint_pos_action" stdset="0">
-                                       <bool>true</bool>
-                                      </property>
-                                      <property name="joint_number" stdset="0">
-                                       <number>3</number>
-                                      </property>
-                                      <property name="axis_letter" stdset="0">
-                                       <string>A</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="2" column="1">
-                                     <widget class="ActionButton" name="a_minus_jogbutton">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="maximumSize">
-                                       <size>
-                                        <width>52</width>
-                                        <height>52</height>
-                                       </size>
-                                      </property>
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                      <property name="icon">
-                                       <iconset>
-                                        <normaloff>images/a_minus_jog_button.png</normaloff>images/a_minus_jog_button.png</iconset>
-                                      </property>
-                                      <property name="iconSize">
-                                       <size>
-                                        <width>44</width>
-                                        <height>44</height>
-                                       </size>
-                                      </property>
-                                      <property name="jog_joint_pos_action" stdset="0">
-                                       <bool>false</bool>
                                       </property>
                                       <property name="jog_joint_neg_action" stdset="0">
                                        <bool>true</bool>
                                       </property>
                                       <property name="joint_number" stdset="0">
-                                       <number>3</number>
+                                       <number>2</number>
                                       </property>
                                       <property name="axis_letter" stdset="0">
-                                       <string>A</string>
+                                       <string>Z</string>
                                       </property>
                                      </widget>
                                     </item>
@@ -7074,7 +7120,7 @@ KEYBOARD</string>
                                   </widget>
                                  </item>
                                  <item>
-                                  <spacer name="horizontalSpacer_12">
+                                  <spacer name="horizontalSpacer_16">
                                    <property name="orientation">
                                     <enum>Qt::Horizontal</enum>
                                    </property>
@@ -7083,7 +7129,7 @@ KEYBOARD</string>
                                    </property>
                                    <property name="sizeHint" stdset="0">
                                     <size>
-                                     <width>60</width>
+                                     <width>40</width>
                                      <height>20</height>
                                     </size>
                                    </property>
@@ -7136,6 +7182,19 @@ KEYBOARD</string>
                                       <property name="bottomMargin">
                                        <number>0</number>
                                       </property>
+                                      <item>
+                                       <spacer name="verticalSpacer_17">
+                                        <property name="orientation">
+                                         <enum>Qt::Vertical</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>20</width>
+                                          <height>40</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
                                       <item alignment="Qt::AlignHCenter">
                                        <widget class="QLabel" name="label_85">
                                         <property name="sizePolicy">
@@ -7220,6 +7279,9 @@ KEYBOARD</string>
                                       <property name="orientation">
                                        <enum>Qt::Vertical</enum>
                                       </property>
+                                      <property name="sizeType">
+                                       <enum>QSizePolicy::Expanding</enum>
+                                      </property>
                                       <property name="sizeHint" stdset="0">
                                        <size>
                                         <width>20</width>
@@ -7227,6 +7289,22 @@ KEYBOARD</string>
                                        </size>
                                       </property>
                                      </spacer>
+                                    </item>
+                                    <item>
+                                     <widget class="QLabel" name="label_13">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>0</width>
+                                        <height>30</height>
+                                       </size>
+                                      </property>
+                                      <property name="text">
+                                       <string>JOG RATE</string>
+                                      </property>
+                                      <property name="alignment">
+                                       <set>Qt::AlignCenter</set>
+                                      </property>
+                                     </widget>
                                     </item>
                                     <item alignment="Qt::AlignHCenter">
                                      <widget class="QLabel" name="lbl_jog_linear">
@@ -7249,8 +7327,7 @@ KEYBOARD</string>
                                        </size>
                                       </property>
                                       <property name="text">
-                                       <string>JOG RATE
-MM/MIN</string>
+                                       <string>MM/MIN</string>
                                       </property>
                                       <property name="alignment">
                                        <set>Qt::AlignCenter</set>
@@ -7445,6 +7522,22 @@ border-radius: 4px;
                                    </layout>
                                   </widget>
                                  </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_12">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeType">
+                                    <enum>QSizePolicy::Fixed</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
                                 </layout>
                                </widget>
                               </item>
@@ -7453,10 +7546,13 @@ border-radius: 4px;
                                 <property name="orientation">
                                  <enum>Qt::Vertical</enum>
                                 </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Preferred</enum>
+                                </property>
                                 <property name="sizeHint" stdset="0">
                                  <size>
                                   <width>20</width>
-                                  <height>2</height>
+                                  <height>40</height>
                                  </size>
                                 </property>
                                </spacer>
@@ -7644,7 +7740,7 @@ border-radius: 4px;
                                 <property name="minimumSize">
                                  <size>
                                   <width>0</width>
-                                  <height>51</height>
+                                  <height>52</height>
                                  </size>
                                 </property>
                                 <layout class="QHBoxLayout" name="horizontalLayout_31">
@@ -7920,10 +8016,13 @@ border-radius: 4px;
                                 <property name="orientation">
                                  <enum>Qt::Vertical</enum>
                                 </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Expanding</enum>
+                                </property>
                                 <property name="sizeHint" stdset="0">
                                  <size>
                                   <width>20</width>
-                                  <height>2</height>
+                                  <height>40</height>
                                  </size>
                                 </property>
                                </spacer>
@@ -9430,6 +9529,9 @@ color: #FFFF00;</string>
                                      <width>60</width>
                                      <height>30</height>
                                     </size>
+                                   </property>
+                                   <property name="text">
+                                    <string/>
                                    </property>
                                    <property name="maxLength">
                                     <number>8</number>
@@ -18166,8 +18268,8 @@ WHEEL</string>
    <slot>btn_clear_status_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>691</x>
-     <y>125</y>
+     <x>99</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>1431</x>
@@ -18182,8 +18284,8 @@ WHEEL</string>
    <slot>btn_copy_file_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>694</x>
-     <y>197</y>
+     <x>99</x>
+     <y>79</y>
     </hint>
     <hint type="destinationlabel">
      <x>512</x>
@@ -18198,8 +18300,8 @@ WHEEL</string>
    <slot>btn_copy_file_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>694</x>
-     <y>263</y>
+     <x>99</x>
+     <y>79</y>
     </hint>
     <hint type="destinationlabel">
      <x>500</x>
@@ -18214,8 +18316,8 @@ WHEEL</string>
    <slot>btn_gcode_edit_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>744</x>
-     <y>563</y>
+     <x>99</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>686</x>
@@ -18294,8 +18396,8 @@ WHEEL</string>
    <slot>btn_load_file_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>694</x>
-     <y>79</y>
+     <x>99</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>676</x>
@@ -18326,7 +18428,7 @@ WHEEL</string>
    <slot>spindle_slover()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1184</x>
+     <x>1181</x>
      <y>728</y>
     </hint>
     <hint type="destinationlabel">
@@ -18342,7 +18444,7 @@ WHEEL</string>
    <slot>spindle_faster()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1184</x>
+     <x>1181</x>
      <y>658</y>
     </hint>
     <hint type="destinationlabel">
@@ -18374,8 +18476,8 @@ WHEEL</string>
    <slot>cam_zoom_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>721</x>
-     <y>151</y>
+     <x>49</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
      <x>1508</x>
@@ -18390,8 +18492,8 @@ WHEEL</string>
    <slot>cam_dia_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>721</x>
-     <y>328</y>
+     <x>49</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
      <x>1482</x>
@@ -18406,8 +18508,8 @@ WHEEL</string>
    <slot>cam_rot_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>721</x>
-     <y>504</y>
+     <x>49</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
      <x>1481</x>
@@ -18422,8 +18524,8 @@ WHEEL</string>
    <slot>chk_inhibit_selection_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>308</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>564</x>
@@ -18438,8 +18540,8 @@ WHEEL</string>
    <slot>chk_alpha_mode_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>279</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>538</x>
@@ -18454,8 +18556,8 @@ WHEEL</string>
    <slot>chk_override_limits_checked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>569</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>669</x>
@@ -18470,8 +18572,8 @@ WHEEL</string>
    <slot>chk_run_from_line_checked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>453</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>693</x>
@@ -18486,8 +18588,8 @@ WHEEL</string>
    <slot>chk_use_camera_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>540</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>408</x>
@@ -18502,8 +18604,8 @@ WHEEL</string>
    <slot>chk_use_virtual_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>482</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>499</x>
@@ -18518,8 +18620,8 @@ WHEEL</string>
    <slot>apply_stylesheet_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>628</x>
-     <y>528</y>
+     <x>119</x>
+     <y>54</y>
     </hint>
     <hint type="destinationlabel">
      <x>1111</x>
@@ -18534,8 +18636,8 @@ WHEEL</string>
    <slot>cone_size_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>498</x>
-     <y>443</y>
+     <x>169</x>
+     <y>59</y>
     </hint>
     <hint type="destinationlabel">
      <x>1186</x>
@@ -18550,8 +18652,8 @@ WHEEL</string>
    <slot>grid_size_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>498</x>
-     <y>393</y>
+     <x>169</x>
+     <y>59</y>
     </hint>
     <hint type="destinationlabel">
      <x>1147</x>
@@ -18598,8 +18700,8 @@ WHEEL</string>
    <slot>chk_use_sensor_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>511</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>882</x>
@@ -18710,8 +18812,8 @@ WHEEL</string>
    <slot>slow_button_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1184</x>
-     <y>363</y>
+     <x>1140</x>
+     <y>415</y>
     </hint>
     <hint type="destinationlabel">
      <x>1760</x>
@@ -18726,8 +18828,8 @@ WHEEL</string>
    <slot>slow_button_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>851</x>
-     <y>500</y>
+     <x>881</x>
+     <y>560</y>
     </hint>
     <hint type="destinationlabel">
      <x>1554</x>
@@ -18849,7 +18951,7 @@ WHEEL</string>
   </connection>
   <connection>
    <sender>cmb_gcode_history</sender>
-   <signal>activated(QString)</signal>
+   <signal>activated(int)</signal>
    <receiver>MainWindow</receiver>
    <slot>cmb_gcode_history_clicked()</slot>
    <hints>
@@ -18918,8 +19020,8 @@ WHEEL</string>
    <slot>btn_save_status_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>691</x>
-     <y>181</y>
+     <x>99</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>730</x>
@@ -18982,8 +19084,8 @@ WHEEL</string>
    <slot>btn_maxv_100_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>56</x>
-     <y>625</y>
+     <x>354</x>
+     <y>662</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
@@ -19046,8 +19148,8 @@ WHEEL</string>
    <slot>disable_spindle_pause()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>189</x>
-     <y>337</y>
+     <x>119</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>211</x>
@@ -19126,8 +19228,8 @@ WHEEL</string>
    <slot>tab_utilities_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>41</x>
-     <y>191</y>
+     <x>59</x>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
      <x>61</x>
@@ -19158,8 +19260,8 @@ WHEEL</string>
    <slot>btn_enable_comp_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>281</x>
-     <y>709</y>
+     <x>320</x>
+     <y>635</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
@@ -19174,8 +19276,40 @@ WHEEL</string>
    <slot>btn_gripper_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>704</x>
-     <y>400</y>
+     <x>99</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>511</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_maxv_ovr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slider_maxv_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>621</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>182</x>
+     <y>1072</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_rapid_ovr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slider_rapid_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>719</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
@@ -19242,9 +19376,9 @@ WHEEL</string>
   <slot>slot1()</slot>
  </slots>
  <buttongroups>
+  <buttongroup name="axis_buttonGroup"/>
   <buttongroup name="mode_buttonGroup"/>
   <buttongroup name="page_buttonGroup"/>
-  <buttongroup name="axis_buttonGroup"/>
   <buttongroup name="start_buttonGroup"/>
  </buttongroups>
 </ui>
