@@ -1724,6 +1724,9 @@ TOUCHY</string>
                                    <property name="toolTip">
                                     <string>Hold to save current view</string>
                                    </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 12pt &quot;BebasKai&quot;;</string>
+                                   </property>
                                    <property name="text">
                                     <string>User
 View</string>
@@ -1770,6 +1773,9 @@ View</string>
                                    </property>
                                    <property name="toolTip">
                                     <string>Set view P</string>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>P</string>
@@ -1856,6 +1862,9 @@ View</string>
                                    <property name="toolTip">
                                     <string>Set view X</string>
                                    </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
+                                   </property>
                                    <property name="text">
                                     <string>X</string>
                                    </property>
@@ -1937,6 +1946,9 @@ View</string>
                                    </property>
                                    <property name="toolTip">
                                     <string>Set view Y</string>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>Y</string>
@@ -2020,6 +2032,9 @@ View</string>
                                    <property name="toolTip">
                                     <string>Set view Z</string>
                                    </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
+                                   </property>
                                    <property name="text">
                                     <string>Z</string>
                                    </property>
@@ -2090,8 +2105,42 @@ View</string>
                                    <property name="toolTip">
                                     <string>Toggle display overlay dro on</string>
                                    </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
+                                   </property>
                                    <property name="text">
                                     <string>DRO</string>
+                                   </property>
+                                   <property name="checkable">
+                                    <bool>true</bool>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="PushButton" name="btn_show_offsets">
+                                   <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                     <horstretch>0</horstretch>
+                                     <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                   </property>
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>50</width>
+                                     <height>40</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>50</width>
+                                     <height>40</height>
+                                    </size>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 12pt &quot;BebasKai&quot;;</string>
+                                   </property>
+                                   <property name="text">
+                                    <string>Offsets</string>
                                    </property>
                                    <property name="checkable">
                                     <bool>true</bool>
@@ -2120,6 +2169,9 @@ View</string>
                                    </property>
                                    <property name="toolTip">
                                     <string>Toggle display dimensions</string>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>D</string>
@@ -2167,6 +2219,9 @@ View</string>
                                    </property>
                                    <property name="toolTip">
                                     <string>Zoom in</string>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 20pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>+</string>
@@ -2249,6 +2304,9 @@ View</string>
                                    </property>
                                    <property name="toolTip">
                                     <string>Zoom out</string>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 20pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>-</string>
@@ -2334,6 +2392,9 @@ View</string>
                                    </property>
                                    <property name="autoFillBackground">
                                     <bool>false</bool>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">font: 75 15pt &quot;BebasKai&quot;;</string>
                                    </property>
                                    <property name="text">
                                     <string>C</string>
@@ -18781,7 +18842,7 @@ WHEEL</string>
    <hints>
     <hint type="sourcelabel">
      <x>71</x>
-     <y>355</y>
+     <y>411</y>
     </hint>
     <hint type="destinationlabel">
      <x>211</x>
@@ -19084,8 +19145,8 @@ WHEEL</string>
    <slot>btn_maxv_100_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>354</x>
-     <y>662</y>
+     <x>76</x>
+     <y>630</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
@@ -19292,8 +19353,8 @@ WHEEL</string>
    <slot>slider_maxv_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>193</x>
-     <y>621</y>
+     <x>116</x>
+     <y>636</y>
     </hint>
     <hint type="destinationlabel">
      <x>182</x>
@@ -19308,12 +19369,44 @@ WHEEL</string>
    <slot>slider_rapid_changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>191</x>
-     <y>719</y>
+     <x>116</x>
+     <y>636</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
      <y>511</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gcodegraphics</sender>
+   <signal>percentLoaded(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>percent_loaded_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
+     <y>-152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_show_offsets</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_show_offsets_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>-24</y>
     </hint>
    </hints>
   </connection>
@@ -19373,12 +19466,13 @@ WHEEL</string>
   <slot>mdi_select_text()</slot>
   <slot>mdi_enter_pressed()</slot>
   <slot>use_mdi_keyboard_changed()</slot>
-  <slot>slot1()</slot>
+  <slot>percent_loaded_changed()</slot>
+  <slot>btn_show_offsets_clicked()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="axis_buttonGroup"/>
+  <buttongroup name="start_buttonGroup"/>
   <buttongroup name="mode_buttonGroup"/>
   <buttongroup name="page_buttonGroup"/>
-  <buttongroup name="start_buttonGroup"/>
  </buttongroups>
 </ui>
