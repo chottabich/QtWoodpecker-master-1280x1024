@@ -802,7 +802,7 @@ class HandlerClass:
         self.w.stackedWidget_2.setCurrentIndex(self.tab_index_code[index])                
         if index == TAB_MAIN:
             self.w.stackedWidget_dro.setCurrentIndex(0)
-            self.w.stackedWidget_2.setCurrentIndex(0)
+            self.w.stackedWidget_2.setCurrentIndex(3)
         # show ngcgui info tab if utilities tab is selected
         # but only if the utilities tab has ngcgui selected
         if index == TAB_UTILITIES:
